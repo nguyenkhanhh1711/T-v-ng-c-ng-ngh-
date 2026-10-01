@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Công nghệ & Ứng dụng – Đọc hiểu A2-B1</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2ff;--card:#fff;--ink:#14206b;--mute:#5a66a8;--b1:#3347f0;--b2:#6c7dff;--cy:#52d6ff;--line:#d9e0ff;--ok:#1fa97a;--okb:#dcf7ee;--no:#e0507a;--nob:#ffe5ee;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.7 "Be Vietnam Pro",system-ui,sans-serif;overflow-x:hidden}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:var(--cy);z-index:60;box-shadow:0 0 10px var(--cy)}
+nav{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:4px;align-items:center;background:#ffffffee;backdrop-filter:blur(10px);border-radius:40px;padding:5px 6px;box-shadow:0 8px 30px #2a3fd044;max-width:94vw;overflow-x:auto;scrollbar-width:none}
+nav a{color:var(--ink);text-decoration:none;font:600 13px "Be Vietnam Pro";padding:5px 13px;border-radius:20px;white-space:nowrap;transition:.2s}
+nav a:hover{background:var(--line)}nav a.d{background:var(--b1);color:#fff}
+#pill{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:55;background:var(--ink);color:#fff;font:600 13px "Be Vietnam Pro";padding:7px 18px;border-radius:30px;box-shadow:0 6px 20px #0005;white-space:nowrap}
+/* hero */
+header{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 20px 70px;color:#fff;background:radial-gradient(ellipse at 50% 55%,#5fd0ff 0,#3a63ff 35%,#2a28c8 65%,#14126e 100%)}
+header:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,#ffffff0d 0 1px,transparent 1px 38px),repeating-linear-gradient(0deg,#ffffff0d 0 1px,transparent 1px 38px);-webkit-mask:linear-gradient(#000,transparent 80%);mask:linear-gradient(#000,transparent 80%)}
+.glow{position:absolute;left:50%;top:48%;width:70vmin;height:70vmin;transform:translate(-50%,-50%);background:radial-gradient(circle,#bff0ffcc,transparent 65%);animation:pu 5s ease-in-out infinite}
+@keyframes pu{50%{transform:translate(-50%,-50%) scale(1.15);opacity:.7}}
+.tile{position:absolute;width:var(--s,74px);height:var(--s,74px);border-radius:24%;display:grid;place-items:center;font:800 calc(var(--s,74px)*.34) "Be Vietnam Pro";color:#fff;background:linear-gradient(145deg,#9aa6ff,#4a5cf0 55%,#2c38cf);box-shadow:inset 0 3px 6px #ffffff88,inset 0 -6px 10px #1a1fa066,0 14px 30px #0a0a6a77,0 0 30px #6c7dff66;animation:fl var(--d,6s) ease-in-out infinite;transform:rotate(var(--r,0deg))}
+.tile.l{background:linear-gradient(145deg,#fff,#b9c7ff 60%,#8ea2ff);color:#3347f0}
+@keyframes fl{50%{transform:translateY(-22px) rotate(calc(var(--r,0deg) + 8deg))}}
+.hc{position:relative;z-index:5;max-width:640px}
+.badge{display:inline-block;background:#ffffff26;border:1px solid #ffffff55;border-radius:20px;padding:2px 16px;font:600 13px "Be Vietnam Pro";margin-bottom:16px;backdrop-filter:blur(6px)}
+h1{font:800 clamp(38px,8vw,76px)/1.05 "Be Vietnam Pro";letter-spacing:-2px;text-shadow:0 6px 40px #0a1a9a99}
+h1 span{background:linear-gradient(90deg,#fff,#aef0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin:16px auto 26px;max-width:520px;color:#e6edff;font-size:17px}
+.go{border:0;background:#fff;color:var(--b1);font:800 16px "Be Vietnam Pro";padding:12px 30px;border-radius:30px;cursor:pointer;box-shadow:0 10px 30px #0a1a9a88;transition:.25s}
+.go:hover{transform:translateY(-4px) scale(1.05)}
+/* sections */
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 130px}
+.sec{padding:80px 0 0}
+.eb{display:inline-block;background:linear-gradient(90deg,var(--b1),var(--b2));color:#fff;font:600 12px "Be Vietnam Pro";letter-spacing:1px;padding:2px 14px;border-radius:20px;margin-bottom:8px}
+h2{font:800 clamp(26px,5vw,42px)/1.15 "Be Vietnam Pro";letter-spacing:-1px;margin-bottom:6px}
+.mu{color:var(--mute)}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+.card{background:var(--card);border-radius:28px;padding:24px 26px;margin:16px 0;box-shadow:0 12px 36px #3347f01c;border:1.5px solid var(--line)}
+.ph{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.pn{flex:none;width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font:800 22px "Be Vietnam Pro";color:#fff;background:linear-gradient(145deg,#9aa6ff,#3347f0);box-shadow:inset 0 2px 4px #fff8,0 8px 18px #3347f044}
+.ph h3{font:800 20px/1.3 "Be Vietnam Pro"}.ph small{color:var(--mute);font-weight:500}
+.en{font-size:17.5px;line-height:1.9}
+.vw{background:linear-gradient(transparent 60%,#bfeaff 60%);border-radius:3px;cursor:pointer;font-weight:600;transition:.2s}
+.vw:hover{background:#bfeaff}
+.tg{margin:14px 0 4px;border:2px solid var(--b2);background:transparent;color:var(--b1);font:600 14px "Be Vietnam Pro";padding:5px 18px;border-radius:24px;cursor:pointer;transition:.2s}
+.tg:hover{background:var(--b1);color:#fff}
+.vi{max-height:0;overflow:hidden;opacity:0;transition:max-height .7s,opacity .6s;color:var(--mute);border-left:4px solid var(--cy);padding-left:0;font-size:16px}
+.vi.on{max-height:600px;opacity:1;padding:8px 0 8px 16px;margin-top:8px}
+.vt{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-top:16px}
+.vc{display:flex;gap:10px;align-items:center;background:var(--bg);border-radius:18px;padding:10px 14px;border:1.5px solid transparent;transition:.25s}
+.vc:hover{border-color:var(--b2);transform:translateY(-3px)}
+.vc button{flex:none;width:36px;height:36px;border-radius:12px;border:0;background:linear-gradient(145deg,#9aa6ff,#3347f0);color:#fff;font-size:15px;cursor:pointer}
+.vc b{display:block;font:800 16px "Be Vietnam Pro"}.vc i{font-style:normal;color:var(--b1);font-size:13px}.vc span{display:block;font-size:14px;color:var(--mute)}
+.vc em{font:600 11px "Be Vietnam Pro";font-style:normal;background:var(--line);padding:0 8px;border-radius:10px;margin-left:6px;color:var(--b1)}
+.rc{margin-top:16px;border-top:2px dashed var(--line);padding-top:12px}
+.rc h4{font:800 15px "Be Vietnam Pro";color:var(--b1);margin-bottom:4px}
+/* question */
+.q{padding:12px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0}
+.q p{font-weight:600;margin-bottom:8px}
+.q.big{background:var(--card);border:1.5px solid var(--line);border-radius:24px;padding:18px 22px;margin-bottom:14px;box-shadow:0 8px 24px #3347f014}
+.op{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:520px){.op{grid-template-columns:1fr}}
+.op button{display:flex;gap:10px;align-items:center;font:500 15.5px "Be Vietnam Pro";text-align:left;padding:8px 14px;border-radius:14px;border:2px solid var(--line);background:#f7f9ff;color:var(--ink);cursor:pointer;transition:.2s}
+.op button b{flex:none;width:26px;height:26px;border-radius:50%;background:var(--line);display:grid;place-items:center;font:800 12px "Be Vietnam Pro"}
+.op button:hover:not(:disabled){border-color:var(--b2);transform:translateY(-2px)}
+.op button:disabled{cursor:default}
+.op .c{background:var(--ok);border-color:var(--ok);color:#fff}.op .c b{background:#fff;color:var(--ok)}
+.op .x{background:var(--no);border-color:var(--no);color:#fff;animation:sk .4s}.op .x b{background:#fff;color:var(--no)}
+@keyframes sk{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.fb{margin-top:10px;padding:10px 14px;border-radius:14px;font-size:14.5px;animation:up .4s}
+.fb.ok{background:var(--okb);border-left:5px solid var(--ok)}.fb.no{background:var(--nob);border-left:5px solid var(--no)}
+@keyframes up{from{opacity:0;transform:translateY(8px)}}
+.n{display:inline-block;background:var(--b1);color:#fff;font:800 12px "Be Vietnam Pro";padding:0 12px;border-radius:20px;margin-bottom:4px}
+textarea{width:100%;min-height:60px;border-radius:14px;border:2px solid var(--line);background:#f7f9ff;color:var(--ink);padding:10px 14px;font:16px "Be Vietnam Pro";resize:vertical;margin:8px 0}
+textarea:focus{outline:none;border-color:var(--b2)}
+.btn{font:600 14px "Be Vietnam Pro";padding:6px 20px;border-radius:30px;border:0;background:var(--b1);color:#fff;cursor:pointer;margin:4px 6px 0 0;transition:.2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 6px 16px #3347f055}.btn.g{background:transparent;color:var(--b1);border:2px solid var(--b2)}
+.hint span{display:inline-block;background:var(--bg);border:1.5px dashed var(--b2);color:var(--b1);font:600 13px "Be Vietnam Pro";padding:0 12px;border-radius:14px;margin-left:6px}
+footer{text-align:center;color:var(--mute);padding:60px 20px 120px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.vi{max-height:none;opacity:1;padding:8px 0 8px 16px}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav><a href="#top">Home</a><a href="#doc">Bài đọc</a><a href="#mc">Trắc nghiệm</a><a href="#dich">Dịch Việt-Anh</a><a class="d" href="#doc">Bắt đầu</a></nav>
+<div id="pill">Đọc hiểu 0/12 · Từ vựng 0/30 · Dịch 0/15</div>
+
+<header id="top">
+  <div class="glow"></div>
+  <div class="tile l" style="--s:80px;left:12%;top:20%;--r:-12deg">▶</div>
+  <div class="tile" style="--s:64px;left:6%;top:52%;--r:10deg;--d:7s">💬</div>
+  <div class="tile" style="--s:72px;right:10%;top:18%;--r:14deg;--d:5s">AI</div>
+  <div class="tile l" style="--s:70px;right:6%;top:50%;--r:-8deg;--d:8s">🌐</div>
+  <div class="tile" style="--s:60px;left:22%;bottom:12%;--r:6deg;--d:6.5s">APP</div>
+  <div class="tile l" style="--s:66px;right:22%;bottom:10%;--r:-14deg;--d:7.5s">↗</div>
+  <div class="tile" style="--s:56px;left:44%;top:9%;--r:-6deg;--d:9s">👤</div>
+  <div class="hc"><div class="badge">Tài liệu đọc hiểu · A2-B1</div><h1>Công nghệ<br><span>&amp; Ứng dụng</span></h1><p class="sub">4 đoạn văn song ngữ, từ vựng có phiên âm và phát âm, kèm 12 câu đọc hiểu, 30 câu trắc nghiệm từ vựng và 15 câu dịch Việt - Anh.</p><button class="go" id="go">Khám phá ngay ➔</button></div>
+</header>
+
+<main class="wrap">
+<section class="sec" id="doc">
+  <div class="rv"><span class="eb">PHẦN 1</span><h2>Bốn đoạn văn về công nghệ</h2><p class="mu">Bấm vào từ được gạch chân hoặc nút 🔊 để nghe phát âm. Bấm “Xem bản dịch” để đọc tiếng Việt.</p></div>
+  <div id="ps"></div>
+</section>
+<section class="sec" id="mc">
+  <div class="rv"><span class="eb">PHẦN 2</span><h2>Bài tập trắc nghiệm từ vựng</h2><p class="mu">30 câu. Chọn đáp án là có kết quả và giải thích ngay.</p></div>
+  <div id="mq" style="margin-top:18px"></div>
+</section>
+<section class="sec" id="dich">
+  <div class="rv"><span class="eb">PHẦN 3</span><h2>Bài tập dịch Việt - Anh</h2><p class="mu">15 câu ứng dụng từ vựng. Viết câu của bạn, bấm kiểm tra để xem đáp án rồi tự chấm.</p></div>
+  <div id="ts" style="margin-top:18px"></div>
+</section>
+</main>
+<footer>Công nghệ làm cuộc sống tiện lợi hơn, nhưng đừng quên nghỉ mắt khỏi màn hình nhé. 👀</footer>
+
+<script>
+const $=s=>document.querySelector(s);
+let ac,on=true;
+function tone(f,t,d,ty,v,to){const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d+.05)}
+function sfx(ok){ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();const t=ac.currentTime;if(ok)[660,880,1175].forEach((f,i)=>tone(f,t+i*.09,.4,"sine",.15));else{tone(300,t,.3,"triangle",.15,190);tone(220,t+.15,.35,"triangle",.13,150)}}
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.9;speechSynthesis.speak(u)}catch(e){}}
+/* data */
+const P=[
+["Công nghệ trong đời sống","Technology in daily life",
+"Technology is everywhere in our daily life. People use various apps powered by smart algorithms to communicate with friends and family quickly. We also see automation in many smart home devices that help us do household chores. Technology makes our lives more convenient and saves a lot of time. However, we should be careful not to spend too much time staring at screens, as it can be bad for our eyes.",
+"Công nghệ có mặt ở khắp mọi nơi trong đời sống hằng ngày của chúng ta. Mọi người sử dụng nhiều ứng dụng khác nhau được vận hành bởi các thuật toán thông minh để giao tiếp với bạn bè và gia đình một cách nhanh chóng. Chúng ta cũng thấy sự tự động hóa ở nhiều thiết bị nhà thông minh giúp chúng ta làm việc nhà. Công nghệ làm cho cuộc sống của chúng ta tiện lợi hơn và tiết kiệm nhiều thời gian. Tuy nhiên, chúng ta nên cẩn thận không dành quá nhiều thời gian nhìn chằm chằm vào màn hình, vì nó có thể gây hại cho mắt.",
+[["Algorithm","n","/ˈælɡərɪðəm/","Thuật toán"],["Communicate","v","/kəˈmjuːnɪkeɪt/","Giao tiếp, liên lạc"],["Automation","n","/ˌɔːtəˈmeɪʃn/","Sự tự động hóa"],["Convenient","adj","/kənˈviːniənt/","Tiện lợi, thuận tiện"],["Screen","n","/skriːn/","Màn hình"]],
+[["What powers the apps people use to communicate?","Factories|Algorithms|Screens|Books",1,"Đoạn 1: apps <b>powered by smart algorithms</b> (được vận hành bởi thuật toán thông minh)."],["Technology makes our lives more:","Expensive|Difficult|Convenient|Lonely",2,"Đoạn 1: “makes our lives more <b>convenient</b>” (tiện lợi hơn)."],["Staring at screens for too long can be bad for our:","Ears|Hands|Eyes|Hair",2,"Đoạn 1: “it can be bad for our <b>eyes</b>” (có hại cho mắt)."]]],
+["Trí tuệ nhân tạo","Artificial Intelligence – AI",
+"Artificial Intelligence, or AI, is a computer system that can learn and think like a human. Today, AI can understand our voice, translate languages, and even drive cars. Many companies use AI to improve their customer service. Some people worry that AI will replace human workers in the future. However, experts believe AI will create new types of jobs for everyone.",
+"Trí tuệ nhân tạo, hay AI, là một hệ thống máy tính có thể học hỏi và suy nghĩ giống như con người. Ngày nay, AI có thể hiểu giọng nói của chúng ta, dịch các ngôn ngữ và thậm chí là lái ô tô. Nhiều công ty sử dụng AI để cải thiện dịch vụ khách hàng của họ. Một số người lo lắng rằng AI sẽ thay thế công nhân con người trong tương lai. Tuy nhiên, các chuyên gia tin rằng AI sẽ tạo ra những loại hình công việc mới cho mọi người.",
+[["Artificial Intelligence","n phr.","/ˌɑːtɪˈfɪʃl ɪnˈtelɪdʒəns/","Trí tuệ nhân tạo"],["System","n","/ˈsɪstəm/","Hệ thống"],["Translate","v","/trænzˈleɪt/","Dịch thuật, phiên dịch"],["Customer service","n phr.","/ˈkʌstəmə ˈsɜːvɪs/","Dịch vụ khách hàng"],["Replace","v","/rɪˈpleɪs/","Thay thế"]],
+[["What can Artificial Intelligence do?","Cook food|Translate languages|Plant trees|Build houses",1,"Đoạn 2: AI can understand voice, <b>translate languages</b> and drive cars."],["Why do companies use AI?","To replace computers|To improve customer service|To save electricity|To make cars",1,"Đoạn 2: “use AI to <b>improve their customer service</b>”."],["What do experts believe AI will do?","Destroy the world|Replace all workers|Create new jobs|Stop working",2,"Đoạn 2: experts believe AI will <b>create new types of jobs</b>."]]],
+["Tác động của công nghệ","Impacts of technology",
+"Technology has both positive and negative impacts on society. On the positive side, it connects people around the world easily. People can work or study from home during difficult times. On the negative side, spending too much time on smart devices can cause health problems like eye pain and lack of sleep. It also makes some people feel lonely in real life.",
+"Công nghệ có cả tác động tích cực và tiêu cực đối với xã hội. Về mặt tích cực, nó kết nối mọi người trên toàn thế giới một cách dễ dàng. Mọi người có thể làm việc hoặc học tập tại nhà trong những khoảng thời gian khó khăn. Về mặt tiêu cực, dành quá nhiều thời gian cho các thiết bị thông minh có thể gây ra các vấn đề sức khỏe như đau mắt và thiếu ngủ. Nó cũng làm cho một số người cảm thấy cô đơn trong đời thực.",
+[["Impact","n","/ˈɪmpækt/","Tác động, ảnh hưởng"],["Positive","adj","/ˈpɒzətɪv/","Tích cực"],["Negative","adj","/ˈneɡətɪv/","Tiêu cực"],["Device","n","/dɪˈvaɪs/","Thiết bị"],["Lonely","adj","/ˈləʊnli/","Cô đơn, lẻ loi"]],
+[["What is a positive impact of technology?","It connects people|It causes eye pain|It makes people lonely|It causes lack of sleep",0,"Đoạn 3: “On the positive side, it <b>connects people</b> around the world”."],["What is a negative impact of spending too much time on devices?","Finding jobs|Health problems|Working from home|Meeting friends",1,"Đoạn 3: quá nhiều thời gian cho thiết bị có thể gây <b>health problems</b> (đau mắt, thiếu ngủ)."],["How does technology make some people feel in real life?","Happy|Lonely|Positive|Smart",1,"Đoạn 3: “makes some people feel <b>lonely</b> in real life”."]]],
+["Ứng dụng công nghệ","Applications of technology",
+"Technology is applied in many fields such as education, medicine, and agriculture. In hospitals, doctors use advanced machines to find diseases early and save lives. In schools, teachers use smart boards and educational software to make lessons more interesting. Farmers also use drones to monitor their crops from the sky. These applications help us work faster and more effectively.",
+"Công nghệ được ứng dụng trong nhiều lĩnh vực như giáo dục, y học và nông nghiệp. Tại các bệnh viện, bác sĩ sử dụng máy móc tiên tiến để phát hiện bệnh tật sớm và cứu sống bệnh nhân. Ở trường học, giáo viên sử dụng bảng thông minh và phần mềm giáo dục để làm cho bài học trở nên thú vị hơn. Nông dân cũng sử dụng thiết bị bay không người lái để theo dõi mùa màng của họ từ trên trời. Những ứng dụng này giúp chúng ta làm việc nhanh hơn và hiệu quả hơn.",
+[["Application","n","/ˌæplɪˈkeɪʃn/","Ứng dụng, sự áp dụng"],["Medicine","n","/ˈmedsn/","Y học, thuốc"],["Advanced","adj","/ədˈvɑːnst/","Tiên tiến, cao cấp"],["Disease","n","/dɪˈziːz/","Bệnh tật, căn bệnh"],["Drone","n","/drəʊn/","Thiết bị bay không người lái"]],
+[["Where do doctors use advanced machines?","In schools|On farms|In hospitals|At home",2,"Đoạn 4: “In <b>hospitals</b>, doctors use advanced machines”."],["What do farmers use to monitor their crops?","Smart boards|Drones|Medicine|Laptops",1,"Đoạn 4: “Farmers also use <b>drones</b> to monitor their crops”."],["These applications help us work ________.","Slower|Less effectively|Harder|Faster and more effectively",3,"Đoạn 4: “help us work <b>faster and more effectively</b>”."]]]];
+const M=[
+["Smart ___ help recommend videos you might like on YouTube.","algorithms|diseases|drones|impacts",0,"“Thuật toán thông minh giúp gợi ý video” → <b>algorithms</b>."],
+["We can ___ with people far away easily using apps.","replace|communicate|translate|impact",1,"Giao tiếp với người ở xa → <b>communicate</b>."],
+["The factory uses ___ to produce goods without human workers.","screen|medicine|automation|system",2,"Sản xuất không cần công nhân → <b>automation</b> (sự tự động hóa)."],
+["Shopping online is very ___ and saves time.","convenient|lonely|negative|artificial",0,"Mua sắm online tiện lợi, tiết kiệm thời gian → <b>convenient</b>."],
+["Looking at the computer ___ all day hurts my eyes.","drone|screen|disease|application",1,"Nhìn <b>screen</b> (màn hình) cả ngày làm đau mắt."],
+["___ Intelligence is changing the world quickly.","Artificial|Positive|Advanced|Convenient",0,"<b>Artificial</b> Intelligence = trí tuệ nhân tạo."],
+["The new computer ___ works very fast.","disease|system|impact|medicine",1,"Hệ thống máy tính mới → <b>system</b>."],
+["Can you ___ this English word into Vietnamese?","replace|communicate|translate|apply",2,"Dịch từ tiếng Anh sang tiếng Việt → <b>translate</b>."],
+["The shop has excellent ___ service for buyers.","customer|artificial|advanced|screen",0,"<b>Customer service</b> = dịch vụ khách hàng."],
+["Robots will ___ some manual workers in factories.","translate|replace|communicate|prevent",1,"Robot sẽ thay thế công nhân → <b>replace</b>."],
+["Pollution has a bad ___ on the environment.","impact|medicine|drone|application",0,"A bad <b>impact</b> on = tác động xấu lên."],
+["Regular exercise has a ___ effect on your health.","negative|positive|lonely|convenient",1,"Tập thể dục đều đặn có tác động <b>positive</b> (tích cực)."],
+["Smoking is a very ___ habit for your lungs.","positive|negative|advanced|convenient",1,"Hút thuốc có hại cho phổi → thói quen <b>negative</b> (tiêu cực)."],
+["Please turn off your mobile ___ during the flight.","device|disease|algorithm|medicine",0,"Tắt thiết bị di động (mobile <b>device</b>) trên chuyến bay."],
+["He felt very ___ when he moved to a new city alone.","convenient|lonely|positive|advanced",1,"Chuyển đến thành phố mới một mình → thấy <b>lonely</b> (cô đơn)."],
+["This new software has many useful ___.","diseases|screens|applications|medicines",2,"Phần mềm có nhiều <b>applications</b> (ứng dụng) hữu ích."],
+["She wants to study ___ at university to become a doctor.","medicine|system|drone|algorithm",0,"Học <b>medicine</b> (y học) để trở thành bác sĩ."],
+["This hospital uses very ___ technology to treat patients.","artificial|advanced|lonely|negative",1,"Công nghệ <b>advanced</b> (tiên tiến) để điều trị bệnh nhân."],
+["Cancer is a very dangerous ___.","disease|impact|system|device",0,"Ung thư là một <b>disease</b> (căn bệnh) nguy hiểm."],
+["A ___ is a small flying robot controlled from the ground.","screen|drone|automation|application",1,"Robot bay nhỏ điều khiển từ mặt đất → <b>drone</b>."],
+["AI stands for Artificial ___.","Intelligence|Algorithm|Impact|Industry",0,"AI = Artificial <b>Intelligence</b>."],
+["We use messaging apps to ___ daily.","translate|replace|communicate|isolate",2,"Dùng ứng dụng nhắn tin để liên lạc hằng ngày → <b>communicate</b>."],
+["A laptop is a very useful ___ for college students.","disease|device|medicine|drone",1,"Laptop là một <b>device</b> (thiết bị) hữu ích."],
+["A search engine uses a complex ___ to find information.","algorithm|automation|impact|disease",0,"Công cụ tìm kiếm dùng <b>algorithm</b> (thuật toán) phức tạp."],
+["Technology brings many ___ benefits to education.","lonely|negative|positive|artificial",2,"Lợi ích thì là <b>positive</b> (tích cực)."],
+["Google can ___ many foreign languages easily.","replace|communicate|translate|impact",2,"Google dịch nhiều ngôn ngữ → <b>translate</b>."],
+["We must consider the ___ of AI on society.","screen|impact|device|medicine",1,"Cân nhắc <b>impact</b> (tác động) của AI lên xã hội."],
+["Some old phones have very small ___.","screens|diseases|medicines|intelligences",0,"Điện thoại cũ có <b>screens</b> (màn hình) rất nhỏ."],
+["Good ___ service makes buyers want to return.","customer|advanced|negative|artificial",0,"<b>Customer</b> service tốt khiến khách quay lại."],
+["New tools make farming more ___ than before.","lonely|convenient|negative|artificial",1,"Công cụ mới làm nông nghiệp <b>convenient</b> (tiện lợi) hơn."]];
+const T=[["Công nghệ làm cho cuộc sống của chúng ta tiện lợi hơn.","convenient","Technology makes our lives more convenient."],["Thuật toán thông minh được sử dụng trong các ứng dụng.","algorithm","Smart algorithms are used in apps."],["Sự tự động hóa tiết kiệm rất nhiều thời gian.","automation","Automation saves a lot of time."],["Đừng nhìn chằm chằm vào màn hình quá lâu.","screen","Don't stare at the screen for too long."],["Trí tuệ nhân tạo có thể dịch các ngôn ngữ.","artificial","Artificial Intelligence can translate languages."],["Hệ thống này rất thông minh.","system","This system is very smart."],["Họ cải thiện dịch vụ khách hàng của họ.","customer service","They improve their customer service."],["AI sẽ không thay thế con người.","replace","AI will not replace humans."],["Công nghệ có một tác động tích cực.","positive","Technology has a positive impact."],["Dành quá nhiều thời gian cho thiết bị là tiêu cực.","negative","Spending too much time on devices is negative."],["Đôi khi tôi cảm thấy cô đơn.","lonely","Sometimes I feel lonely."],["Có nhiều ứng dụng của công nghệ.","application","There are many applications of technology."],["Bác sĩ sử dụng máy móc tiên tiến trong y học.","advanced","Doctors use advanced machines in medicine."],["Công nghệ giúp tìm ra bệnh tật sớm.","disease","Technology helps find diseases early."],["Nông dân sử dụng thiết bị bay không người lái.","drone","Farmers use drones."]];
+/* scoring */
+const S={rc:[0,0],mc:[0,0],tr:[0,0]};
+function pill(){$("#pill").textContent=`Đọc hiểu ${S.rc[0]}/12 · Từ vựng ${S.mc[0]}/30 · Dịch ${S.tr[0]}/15`}
+const L="ABCD";
+function QC(q,n,g,big){const d=document.createElement("div"),o=q[1].split("|");d.className="q"+(big?" big":"");
+d.innerHTML=`<span class="n">Câu ${n}</span><p>${q[0].replace(/_{3,}/,"<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>")}</p><div class="op">${o.map((t,j)=>`<button data-j="${j}"><b>${L[j]}</b>${t}</button>`).join("")}</div><div class="fb" style="display:none"></div>`;
+const bs=d.querySelectorAll("button"),fb=d.querySelector(".fb");
+bs.forEach(b=>b.onclick=()=>{const j=+b.dataset.j,ok=j==q[2];bs.forEach(x=>x.disabled=true);bs[q[2]].classList.add("c");if(!ok)b.classList.add("x");fb.style.display="block";fb.className="fb "+(ok?"ok":"no");fb.innerHTML=(ok?"✅ <b>Chính xác!</b> ":`❌ <b>Chưa đúng.</b> Đáp án đúng là <b>${L[q[2]]}. ${o[q[2]]}</b>. `)+q[3];S[g][0]+=ok;S[g][1]++;sfx(ok);pill()});return d}
+/* passages */
+P.forEach((p,i)=>{let en=p[2];p[4].forEach((w,k)=>{en=en.replace(new RegExp("\\b"+w[0]+"\\w*","gi"),m=>`<span class="vw" data-k="${k}" title="${w[3]}">${m}</span>`)});
+const c=document.createElement("div");c.className="card rv";
+c.innerHTML=`<div class="ph"><div class="pn">${i+1}</div><div><h3>${p[0]}</h3><small>${p[1]}</small></div></div><p class="en">${en}</p><button class="tg">Xem bản dịch ▾</button><div class="vi">${p[3]}</div><div class="vt">${p[4].map(w=>`<div class="vc"><button aria-label="Nghe">🔊</button><div><b>${w[0]}<em>${w[1]}</em></b><i>${w[2]}</i><span>${w[3]}</span></div></div>`).join("")}</div><div class="rc"><h4>Reading Comprehension</h4></div>`;
+c.querySelectorAll(".vw").forEach(e=>e.onclick=()=>say(e.textContent));
+c.querySelectorAll(".vc button").forEach((b,k)=>b.onclick=()=>say(p[4][k][0]));
+const vi=c.querySelector(".vi"),tg=c.querySelector(".tg");tg.onclick=()=>{vi.classList.toggle("on");tg.textContent=vi.classList.contains("on")?"Ẩn bản dịch ▴":"Xem bản dịch ▾"};
+p[5].forEach((q,k)=>c.querySelector(".rc").appendChild(QC([q[0],q[1],q[2],q[3]],i*3+k+1,"rc",false)));$("#ps").appendChild(c)});
+M.forEach((q,i)=>{const d=QC(q,i+1,"mc",true);d.classList.add("rv");$("#mq").appendChild(d)});
+T.forEach((t,i)=>{const c=document.createElement("div");c.className="q big rv";c.innerHTML=`<span class="n">Câu ${i+1}</span><p>${t[0]} <span class="hint"><span>${t[1]}</span></span></p><textarea placeholder="Viết câu tiếng Anh của bạn..."></textarea><button class="btn">Kiểm tra</button><div class="fb" style="display:none"></div>`;
+const ta=c.querySelector("textarea"),fb=c.querySelector(".fb");c.querySelector(".btn").onclick=function(){if(this.dataset.u)return;this.dataset.u=1;this.disabled=true;ta.readOnly=true;const v=ta.value.toLowerCase();fb.style.display="block";fb.className="fb ok";
+fb.innerHTML=`${v.trim()?(v.includes(t[1].split(" ")[0])?"👍 Bạn đã dùng từ khóa <b>"+t[1]+"</b>.":"💡 Bạn chưa dùng từ khóa <b>"+t[1]+"</b>."):"💡 Bạn chưa nhập câu nào."}<br><b>Đáp án:</b> ${t[2]}<div style="margin-top:8px"><button class="btn" data-r="1">Mình viết đúng</button><button class="btn g" data-r="0">Cần luyện thêm</button></div>`;
+fb.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{S.tr[0]+=+b.dataset.r;S.tr[1]++;fb.querySelector("div").innerHTML=b.dataset.r=="1"?"🎉 Tuyệt, đã ghi nhận!":"🔁 Không sao, đọc lại đáp án rồi thử lần sau nhé.";sfx(b.dataset.r=="1");pill()})};$("#ts").appendChild(c)});
+/* fx */
+$("#go").onclick=()=>$("#doc").scrollIntoView();
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");io.unobserve(x.target)}}),{threshold:.06});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+addEventListener("scroll",()=>{$("#bar").style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+"%"});
+</script>
+</body>
+</html>
